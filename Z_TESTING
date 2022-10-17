@@ -1,0 +1,109 @@
+<?php
+include_once '../config/dbcon.php';
+include_once '../template/header.php';
+
+//proteksi halaman menggunakan session
+if (empty($_SESSION['nopeg']) and empty($_SESSION['user'])) {
+    header("location:../auth.php");
+} else {
+?>
+
+    <form method="post" name="frm">
+        <h5>[ data induk ]</h5>
+        <a href="../dashboard.php" class="btn btn-light">
+            <--Balik< /a>
+                &nbsp;
+                <a href="generate.php" class="btn btn-primary">Tambah siswa</a>
+                <br><br>
+
+                <div class="table-responsive-sm ">
+                    <table id="myTable" class="responsive display nowrap" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Kelas</th>
+                                <th>Nonf</th>
+                                <th>Induk</th>
+                                <th>Opsi 1</th>
+                                <th>Opsi 2</th>
+
+                            </tr>
+                        </thead>
+                        </tbody>
+                        <?php
+                        $res = $koneksi->query(
+                            //mengggunakan query join tabel
+                            "SELECT id_induk, trx_induk.nonf, trx_induk.nama_induk, trx_kelas.nama_kelas
+	FROM trx_induk
+	JOIN trx_kelas ON trx_induk.trx_id_kelas=trx_kelas.id_kelas
+	WHERE trx_induk.code_devisi = '$_SESSION[unit]'
+	ORDER BY trx_kelas.nama_kelas ASC
+	"
+                        ); //menampilkan join tabel dan data hanya user session tertentu saja
+                        $count = $res->num_rows;
+                        if ($count > 0) {
+                            while ($row = $res->fetch_array()) { ?>
+                                <tr>
+                                    <td><?php echo $row['nama_kelas']; ?></td>
+                                    <td><?php echo $row['nonf']; ?></td>
+                                    <td><?php echo $row['nama_induk']; ?></td>
+                                    <td>
+                                        <a href="laporan_nilai.php?id_induk=<?php echo $row['id_induk'] ?>"><u>Cetak</u></a> |
+                                        <a href="rekomen.php?id_induk=<?php echo $row['id_induk'] ?>"><u>Rekomen</u></a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-success btn-sm" href="laporan_nilai.php?id_induk=<?php echo $row['id_induk'] ?>"><u>Edit</u></a>
+                                        <a class="btn btn-danger btn-sm" href="laporan_nilai.php?id_induk=<?php echo $row['id_induk'] ?>"><u>Del</u></a>
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                        } else {
+                            ?>
+                            <tr>
+                                <td colspan="12"> tidak ada data untuk ditampilkan !</td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                        <?php
+                        if ($count > 0) {
+                        ?>
+                            <tfoot class="thead-light">
+                                <tr>
+                                    <th>Kelas</th>
+                                    <th>Nonf</th>
+                                    <th>Induk</th>
+                                    <th>Opsi 1</th>
+                                    <th>Opsi 2</th>
+                                </tr>
+                            </tfoot>
+                        <?php
+                        }
+                        ?>
+                    </table>
+                </div />
+    </form>
+
+
+    <script>
+        //javascript working
+        $('document').ready(function() {
+            $('#myTable').dataTable({
+                "responsive": true,
+                "columnDefs": [{
+                        responsivePriority: 1,
+                        targets: 0
+                    },
+                    {
+                        responsivePriority: 2,
+                        targets: 4
+                    }
+                ]
+            });
+        });
+    </script>
+
+<?php
+}
+include_once '../template/footer.php';
+?>
