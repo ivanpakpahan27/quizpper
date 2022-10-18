@@ -5,7 +5,7 @@ include('check.php');
 <div class="main">
     <div class="content">
         <div class="report">
-            <h2><u>Dash Board</u></h2>
+            <h2>Dashboard</h2>
 
             <?php
             if (isset($_SESSION['success'])) {
@@ -17,11 +17,11 @@ include('check.php');
                 unset($_SESSION['fail']);
             }
             ?>
-
             <div class="clearfix">
                 <a href="<?php echo SITEURL; ?>teacher/index.php?page=students">
-                    <div class="dash-tile">
-                        <h1>
+                    <div class="dash-tile d-flex justify-content-center">
+                        <h3>
+                            <i class="fa-solid fa-users"></i>
                             <?php
                             $teacher_id = $_SESSION["teacher_id"];
                             $query = "
@@ -33,14 +33,15 @@ include('check.php');
                             unset($res);
                             echo $count_rows;
                             ?>
-                        </h1>
+                        </h3>
                         <span>Students</span>
                     </div>
                 </a>
 
                 <a href="<?php echo SITEURL; ?>teacher/index.php?page=subjects">
-                    <div class="dash-tile">
-                        <h1>
+                    <div class="dash-tile d-flex justify-content-center">
+                        <h3>
+                            <i class="fa-solid fa-book"></i>
                             <?php
                             $teacher_id = $_SESSION["teacher_id"];
                             $query = "SELECT * FROM tbl_subject WHERE teacher_id = '$teacher_id'";
@@ -49,14 +50,15 @@ include('check.php');
                             unset($res);
                             echo $count_rows;
                             ?>
-                        </h1>
+                        </h3>
                         <span>Subjects</span>
                     </div>
                 </a>
 
                 <a href="<?php echo SITEURL; ?>teacher/index.php?page=questions">
-                    <div class="dash-tile">
-                        <h1>
+                    <div class="dash-tile d-flex justify-content-center">
+                        <h3>
+                            <i class="fa-solid fa-clipboard-question"></i>
                             <?php
                             $teacher_id = $_SESSION["teacher_id"];
                             $query = "
@@ -68,14 +70,15 @@ include('check.php');
                             unset($res);
                             echo $count_rows;
                             ?>
-                        </h1>
+                        </h3>
                         <span>Questions</span>
                     </div>
                 </a>
 
                 <a href="<?php echo SITEURL; ?>teacher/index.php?page=results">
-                    <div class="dash-tile">
-                        <h1>
+                    <div class="dash-tile d-flex justify-content-center">
+                        <h3>
+                            <i class="fa-solid fa-square-poll-vertical"></i>
                             <?php
                             $teacher_id = $_SESSION["teacher_id"];
                             $query = "
@@ -88,7 +91,7 @@ include('check.php');
                             unset($res);
                             echo $count_rows;
                             ?>
-                        </h1>
+                        </h3>
                         <span>Results</span>
                     </div>
                 </a>

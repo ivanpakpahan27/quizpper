@@ -50,7 +50,7 @@ include('check.php');
                     </div>
                     <br />
                 </div>
-                <div>
+                <!-- <div>
                     <span class="form-label">Subject</span>
                     <select name="subject_id">
                         <?php
@@ -74,7 +74,7 @@ include('check.php');
                         }
                         ?>
                     </select>
-                </div>
+                </div> -->
                 <br />
                 <div>
                     <input type="submit" name="submit" value="Add Student" class="btn btn-success" style="margin-left: 15%;" />
@@ -101,11 +101,11 @@ include('check.php');
                     $gender = 'male';
                 }
 
-                $add_subject_id = $obj->sanitize($conn, $_POST['subject_id']);
+                // $add_subject_id = $obj->sanitize($conn, $_POST['subject_id']);
                 $added_date = date('Y-m-d');
 
                 //Backend Validation, Checking whether the input fields are empty or not
-                if (($first_name || $last_name || $email || $username || $password) == null) {
+                if (($first_name || $last_name || $username || $password) == null) {
                     //SET SSESSION Message
                     $_SESSION['validation'] = "<div class='error'>First Name or Last Name, or Email or Username or Password is Empty.</div>";
                     header('location:' . SITEURL . 'teacher/index.php?page=add_student');
@@ -130,7 +130,6 @@ include('check.php');
                                     contact='$contact',
                                     gender='$gender',
                                     role='student',
-                                    subject_id='$add_subject_id',
                                     is_active='yes',
                                     added_date='$added_date',
                                     updated_date=''";

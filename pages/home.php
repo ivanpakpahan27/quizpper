@@ -16,20 +16,20 @@ include('check.php');
             }
             ?>
             <!-- <?php echo $_SESSION['student_id']; ?> -->
-            Halo <span class="fw-bold"><?php echo $_SESSION['student_username']; ?></span>. Selamat datang di portal Quizpper.<br />
+            <p class="mb-5">Halo <span class="fw-bold"><?php echo $_SESSION['student_username']; ?></span>. Selamat datang di portal Quizpper.<br /></p>
             <!-- <?php var_dump($_SESSION); ?> -->
-            <div class="card mb-5">
+            <div class="card mb-5 shadow-lg p-3 mb-5 bg-body rounded">
                 <p class="m-2" style="text-align: left;">
-                    Here are some of the rules and regulations of this app.<br />
-                    1. This test is automated and you won't be able to return to previous question.<br />
-                    2. Once you successfully login, you can't log back in unless the permission of system administrator.<br />
-                    3. After you click on "Take a Test", the timer will start and it can't be paused or stopped.<br />
-                    4. English questions will appear first and after you finish Englihs, you will be given Math question.
+                    Berikut adalah beberapa aturan yang wajib kamu ikuti pada aplikasi ini. <br>
+                    1. Tes ini bersifat otomatis <br>
+                    2. Pendaftaran kelas ujian berdasarkan token yang diberikan guru <br>
+                    3. Setelah Anda mengklik "Ikuti Tes", timer akan mulai dan tidak dapat dijeda atau dihentikan. <br>
+                    4. Skor langsung dicetak <br>
                 </p>
             </div>
 
             <a href="<?php echo SITEURL; ?>index.php?page=question">
-                <button type="button" class="btn btn-primary">Take a Test</button>
+                <button type="button" class="btn btn-primary">Ikuti Tes</button>
             </a>
 
             <p class="mt-5 text-center">Daftar Kelas</p>

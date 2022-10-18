@@ -18,7 +18,7 @@ if (isset($_GET['student_id']) || isset($_GET['student_username'])) {
         $password = $row['password'];
         $contact = $row['contact'];
         $gender = $row['gender'];
-        $add_subject_id = $row['subject_id'];
+        // $add_subject_id = $row['subject_id'];
         $is_active = $row['is_active'];
     } else {
         header('location:' . SITEURL . 'teacher/index.php?page=students');
@@ -73,7 +73,7 @@ if (isset($_GET['student_id']) || isset($_GET['student_username'])) {
                         } ?> type="radio" name="gender" value="other" /> Other
                 <br />
 
-                <span class="name">Subjcet</span>
+                <!-- <span class="name">Subjcet</span>
                 <select name="subject_id">
                     <?php
                     //Get Faculties from database
@@ -97,10 +97,10 @@ if (isset($_GET['student_id']) || isset($_GET['student_username'])) {
                     <?php
                     }
                     ?>
-                </select>
+                </select> -->
                 <br />
 
-                <span class="name">Is Active?</span>
+                <span class="name">Active</span>
                 <input <?php if ($is_active == 'yes') {
                             echo "checked='checked'";
                         } ?> type="radio" name="is_active" value="yes" /> Yes
@@ -118,7 +118,7 @@ if (isset($_GET['student_id']) || isset($_GET['student_username'])) {
                 //echo "Clicked";
                 $first_name = $obj->sanitize($conn, $_POST['first_name']);
                 $last_name = $obj->sanitize($conn, $_POST['last_name']);
-                $update_subject_id = $obj->sanitize($conn, $_POST['subject_id']);
+                // $update_subject_id = $obj->sanitize($conn, $_POST['subject_id']);
                 $email = $obj->sanitize($conn, $_POST['email']);
                 $username = $obj->sanitize($conn, $_POST['username']);
                 $password = $obj->sanitize($conn, $_POST['password']);
@@ -134,7 +134,7 @@ if (isset($_GET['student_id']) || isset($_GET['student_username'])) {
                 $updated_date = date('Y-m-d');
 
                 //Normal Validation
-                if (($first_name || $last_name || $email || $username || $password) == null) {
+                if (($first_name || $last_name || $username || $password) == null) {
                     //SET SSESSION Message
                     $_SESSION['validation'] = "<div class='error'>First Name or Last Name, or Email or Username or Password is Empty.</div>";
                     header('location:' . SITEURL . 'teacher/index.php?page=update_student&student_id=' . $student_id);
@@ -149,7 +149,6 @@ if (isset($_GET['student_id']) || isset($_GET['student_username'])) {
                                     password='$password',
                                     contact='$contact',
                                     gender='$gender',
-                                    subject_id='$update_subject_id',
                                     is_active='$is_active',
                                     updated_date='$updated_date'
                                     ";

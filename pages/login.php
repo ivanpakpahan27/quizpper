@@ -27,27 +27,27 @@
                 <div class="d-sm-flex align-items-sm-center justify-content-sm-between">
                     <div class="d-flex align-items-center">
                         <label class="option">
-                            <span class="text-light-white">Remember Me</span>
+                            <span class="text-light-white">Ingat Saya</span>
                             <input type="checkbox" checked>
                             <span class="checkmark"></span>
                         </label>
                     </div>
-                    <div class="mt-sm-0 mt-3"><a href="#">Forgot password?</a></div>
+                    <div class="mt-sm-0 mt-3"><a href="#">Lupa Password?</a></div>
                 </div>
 
                 <div class="d-flex justify-content-start mt-2">
                     <div class="me-2">
-                        <input type="submit" name="submit" value="Log In" class="btn btn-primary">
+                        <input type="submit" name="submit" value="Masuk" class="btn btn-outline-info">
                     </div>
 
-                    <div class="">
-                        <input type="reset" name="reset" value="Reset" class="btn btn-primary" />
+                    <div>
+                        <input type="reset" name="reset" value="Bersihkan" class="btn btn-outline-info" />
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <span class="text-light-white">Don't have an account?</span>
-                    <a href="#">Sign Up</a>
+                    <span class="text-light-white">Tidak punya akun?</span>
+                    <a href="#" style="color: blue;">Daftar</a>
                 </div>
 
                 <center>
@@ -90,7 +90,7 @@
                     $_SESSION['login'] = "
                     <script>
                     Swal.fire(
-                        'Login Succesfull!',
+                        'Berhasil Masuk',
                         '',
                         'success'
                       )
@@ -103,7 +103,7 @@
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'Pasword atau Username yang kamu masukkan salah!'
+                        text: 'Pasword atau Username yang kamu masukkan salah!',
                       })
                     </script>
                     ";
