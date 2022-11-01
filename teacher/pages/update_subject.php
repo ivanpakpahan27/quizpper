@@ -11,12 +11,16 @@ if (isset($_GET['id'])) {
     $count_rows = $obj->num_rows($res);
     if ($count_rows == 1) {
         $row = $obj->fetch_data($res);
+        $teacher_id = $row['teacher_id'];
         $subject_name = $row['subject_name'];
         $time_duration = $row['time_duration'];
         $qns_per_page = $row['qns_per_set'];
         $total_english = $row['total_english'];
         $total_math = $row['total_math'];
         $is_active = $row['is_active'];
+        if (($_SESSION['teacher_id']) != $teacher_id) {
+            header('location:' . SITEURL . 'error404.html');
+        }
     } else {
         header('location:' . SITEURL . 'teacher/index.php?page=subjects');
     }

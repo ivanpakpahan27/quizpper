@@ -50,8 +50,9 @@ include('check.php');
                         <tbody>
                             <?php
                             //Getting all the subject from database
-                            $tbl_name = "tbl_subject ORDER BY subject_id DESC";
-                            $query = $obj->select_data($tbl_name);
+                            $tbl_name = "tbl_subject";
+                            $where =  "teacher_id =" . $_SESSION['teacher_id'] . " ORDER BY subject_id DESC";
+                            $query = $obj->select_data($tbl_name, $where);
                             $res = $obj->execute_query($conn, $query);
                             $count_rows = $obj->num_rows($res);
                             $sn = 1;
