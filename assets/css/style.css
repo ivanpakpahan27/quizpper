@@ -1,16 +1,14 @@
-/*
-Theme Name: Test Preparation App Ro Beyond Boundaries
-Author: VIjay Thapa
-Author URI: http://www.vijaythapa.com.np
-Version: 1.0
-*/
-/*CSS FOR ALL*/
 * {
     margin: 0 0;
     padding: 0 0;
     font-family: arial, sans-serif;
     line-height: 25px;
 }
+
+.card a {
+    text-decoration: none;
+}
+
 
 .wrapper {
     width: 80%;

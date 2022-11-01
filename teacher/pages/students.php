@@ -29,7 +29,7 @@ include('check.php');
             ?>
             <div class="table-responsive card shadow-lg p-3 mb-5 bg-body rounded">
                 <div class="m-5">
-                    <table id="table-student" class="display nowrap" style="width:100%" cellspacing="0" width="100%">
+                    <table id="table-students" class="display nowrap" style="width:100%" cellspacing="0" width="100%">
                         <thead>
                             <tr>
                                 <th>S.N.</th>
@@ -124,12 +124,9 @@ include('check.php');
 </div>
 <script>
     $(document).ready(function() {
-        $('#table-student').DataTable({
+        $('#table-students').DataTable({
             responsive: true
         });
     });
-</script>
-<script>
-
 </script>
 <!--Body Ends Here-->

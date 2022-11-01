@@ -1,7 +1,7 @@
 <!--Body Starts Here-->
 <div class="main">
     <div class="wrapper">
-        <div class="card-login shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
             <form method="post" action="" class="d-flex flex-column">
                 <div class="h3 text-center text-white">
                     <img src="https://i.ibb.co/KX4XZSL/removal-ai-tmp-634a698c25201-2.png" height="375" width="375">
@@ -37,17 +37,17 @@
 
                 <div class="d-flex justify-content-start mt-2">
                     <div class="me-2">
-                        <input type="submit" name="submit" value="Masuk" class="btn btn-outline-info">
+                        <input type="submit" name="submit" value="Masuk" class="btn btn-secondary">
                     </div>
 
                     <div>
-                        <input type="reset" name="reset" value="Bersihkan" class="btn btn-outline-info" />
+                        <input type="reset" name="reset" value="Bersihkan" class="btn btn-secondary" />
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <span class="text-light-white">Tidak punya akun?</span>
-                    <a href="#" style="color: blue;">Daftar</a>
+                    <a href="#">Daftar</a>
                 </div>
 
                 <center>
@@ -60,7 +60,7 @@
                                         <i class="fa-sharp fa-solid fa-person-chalkboard"></i>
                                     </div>
                                     <div class="m-2">
-                                        Teacher Login
+                                        Masuk Sebagai Guru
                                     </div>
                                 </a>
                             </div>
