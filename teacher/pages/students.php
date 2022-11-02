@@ -48,7 +48,7 @@ include('check.php');
                             $query = "
                              SELECT *
                              FROM tbl_student
-                             WHERE subject_id IN (SELECT subject_id FROM tbl_subject WHERE teacher_id = '.$teacher_id.')";
+                             WHERE student_id IN (SELECT student_id FROM tbl_enroll WHERE subject_id = 1)";
                             // $query = "SELECT * FROM tbl_student ORDER BY student_id DESC";
                             $sn = 1;
                             $res = $obj->execute_query($conn, $query);

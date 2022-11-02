@@ -125,12 +125,14 @@
                 </ul>
                 <?php
                 if ((isset($_SESSION['teacher_id'])) && ($_GET['page'] != 'login')) {
+                    $teacher_username = $_SESSION['teacher_username'];
                     echo "<form class='d-flex ms-auto'>
                     <div class='nav-item dropdown'>
                         <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' data-bs-display='static' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
                             <img src='https://www.pngmart.com/files/21/Admin-Profile-PNG-Clipart.png' class='rounded-circle' width='70' height='70'>
                         </a>
                         <ul class='dropdown-menu dropdown-menu-dark dropdown-menu-lg-end' aria-labelledby='navbarDropdown'>
+                            <li><p class='dropdown-item' href='#'>$teacher_username</p></li>
                             <li><a class='dropdown-item' href='index.php?page=settings'><i class='fa-solid fa-user-pen me-2'></i>Edit Profil</a></li>
                             <li><a class='dropdown-item' onclick='logout_alert()' data-bs-toggle='modal_' data-bs-target='#logoutModal_' id='logout_alert'><i class='me-2 fa-solid fa-right-from-bracket'></i>Log Out</a></li>
                         </ul>
