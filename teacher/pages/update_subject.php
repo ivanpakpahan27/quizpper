@@ -32,7 +32,7 @@ if (isset($_GET['id'])) {
     <div class="content">
         <div class="report">
 
-            <form method="post" action="" class="forms card row p-5 shadow-lg p-3 mb-5 bg-body rounded">
+            <form method="post" action="" class="card row p-5 shadow-lg p-3 mb-5 bg-body rounded">
                 <h2>Edit Kuis</h2>
                 <?php
                 if (isset($_SESSION['update'])) {
