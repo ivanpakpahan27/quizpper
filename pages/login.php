@@ -28,11 +28,13 @@
                     <div class="d-flex align-items-center">
                         <label class="option">
                             <span class="text-light-white">Ingat Saya</span>
-                            <input type="checkbox" checked>
+                            <input type="checkbox" class="option-input checkbox">
                             <span class="checkmark"></span>
                         </label>
                     </div>
-                    <div class="mt-sm-0 mt-3"><a href="#">Lupa Password?</a></div>
+                    <div class="mt-sm-0 mt-3">
+                        <a style="color: gray;" href="#">Lupa Password?</a>
+                    </div>
                 </div>
 
                 <div class="d-flex justify-content-start mt-2">
@@ -47,7 +49,7 @@
 
                 <div class="mb-3">
                     <span class="text-light-white">Tidak punya akun?</span>
-                    <a href="#">Daftar</a>
+                    <a style="color: gray;" href="#">Daftar</a>
                 </div>
 
                 <center>
@@ -55,7 +57,7 @@
                         <input style="display:none" class="form-check-input" type="radio" name="exampleRadios" id="teacherRadios" value="teacher" checked>
                         <label class="form-check-label" for="teacherRadios">
                             <div>
-                                <a href="teacher/index.php?page=dashboard">
+                                <a style="color: gray;" href="teacher/index.php?page=dashboard">
                                     <div>
                                         <i class="fa-sharp fa-solid fa-person-chalkboard"></i>
                                     </div>

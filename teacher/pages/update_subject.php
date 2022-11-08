@@ -32,7 +32,7 @@ if (isset($_GET['id'])) {
     <div class="content">
         <div class="report">
 
-            <form method="post" action="" class="forms">
+            <form method="post" action="" class="forms card row p-5 shadow-lg p-3 mb-5 bg-body rounded">
                 <h2>Update Subject</h2>
                 <?php
                 if (isset($_SESSION['update'])) {
@@ -40,32 +40,35 @@ if (isset($_GET['id'])) {
                     unset($_SESSION['update']);
                 }
                 ?>
-                <span class="name">Subject Title</span>
-                <input type="text" name="subject_name" value="<?php echo $subject_name; ?>" required="true" /> <br />
+                <span class="form-label">Subject Title</span>
+                <input class="form-control" type="text" name="subject_name" value="<?php echo $subject_name; ?>" required="true" /> <br />
 
                 <span class="name">Time Duration</span>
-                <input type="number" name="time_duration" value="<?php echo $time_duration; ?>" required="true" /><br />
+                <input class="form-control" type="number" name="time_duration" value="<?php echo $time_duration; ?>" required="true" /><br />
 
                 <span class="name">Questions/Set</span>
-                <input type="number" name="qns_per_page" value="<?php echo $qns_per_page; ?>" required="true" /><br />
+                <input class="form-control" type="number" name="qns_per_page" value="<?php echo $qns_per_page; ?>" required="true" /><br />
 
                 <span class="name">Total English Qns</span>
-                <input type="number" name="total_english_qns" value="<?php echo $total_english; ?>" required="true" /><br />
+                <input class="form-control" type="number" name="total_english_qns" value="<?php echo $total_english; ?>" required="true" /><br />
 
                 <span class="name">Total Math Qns</span>
-                <input type="number" name="total_math_qns" value="<?php echo $total_math; ?>" /><br />
+                <input class="form-control" type="number" name="total_math_qns" value="<?php echo $total_math; ?>" /><br />
 
-                <span class="name">Is Active?</span>
-                <input <?php if ($is_active == "yes") {
-                            echo "checked='checked'";
-                        } ?> type="radio" name="is_active" value="yes" /> Yes
-                <input <?php if ($is_active == "no") {
-                            echo "checked='checked'";
-                        } ?> type="radio" name="is_active" value="no" /> No
+                <div>
+                    <span class="name">Is Active?</span>
+                    <input <?php if ($is_active == "yes") {
+                                echo "checked='checked'";
+                            } ?> type="radio" name="is_active" value="yes" /> Yes
+                    <input <?php if ($is_active == "no") {
+                                echo "checked='checked'";
+                            } ?> type="radio" name="is_active" value="no" /> No
+                </div>
                 <br />
-
-                <input type="submit" name="submit" value="Update Subject" class="btn-update" style="margin-left: 15%;" />
-                <button type="button" class="btn-delete">Cancel</button>
+                <div>
+                    <input type="submit" name="submit" value="Update Subject" class="btn btn-info" style="margin-left: 15%;" />
+                    <button type="button" class="btn btn-danger">Cancel</button>
+                </div>
             </form>
             <?php
             if (isset($_POST['submit'])) {
