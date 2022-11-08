@@ -25,12 +25,13 @@ include('check.php');
                 unset($_SESSION['delete']);
             }
             ?>
-            <div class="table-responsive card shadow-lg p-3 mb-5 bg-body rounded">
+            <div class="text-center table-responsive card shadow-lg p-3 mb-5 bg-body rounded">
                 <div class="m-5">
 
                     <table id="table-subjects" class="text-center display nowrap cell-border compact stripe" style="width:100%" cellspacing="0" width="100%">
                         <thead>
                             <tr>
+                                <th></th>
                                 <th>S.N.</th>
                                 <th>Nama Subyek</th>
                                 <th>Token</th>
@@ -71,6 +72,7 @@ include('check.php');
                                     $enroll_token = $row['enroll_token'];
                             ?>
                                     <tr>
+                                        <td></td>
                                         <td><?php echo $sn++; ?>. </td>
                                         <td>
                                             <div><?php echo $subject_name; ?></div>
@@ -81,7 +83,7 @@ include('check.php');
                                         <td>
                                             <div class="mb-2">
                                                 <a href="<?php echo SITEURL; ?>teacher/index.php?page=update_subject&id=<?php echo $subject_id; ?>">
-                                                    <button style="width:95px" type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</button></a>
+                                                    <button style="width:88px" type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Edit</button></a>
                                             </div>
                                             <div>
                                                 <button type="button" class="btn btn-danger deleteSubject" data-id="<?php echo $subject_id; ?>" data-bs-toggle="modal" data-bs-target="#deleteModal">
