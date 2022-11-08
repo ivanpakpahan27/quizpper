@@ -10,10 +10,10 @@ if (isset($_POST['delete_question'])) {
     $query = $obj->delete_data($tbl_name, $where);
     $res = $obj->execute_query($conn, $query);
     if ($res == true) {
-        $_SESSION['delete'] = "<div class='success'>" . $title . " successfully deleted.</div>";
+        $_SESSION['delete'] = "<div class='alert alert-success'>" . $title . " Berhasil menghapus!.</div>";
         header('location:' . SITEURL . 'teacher/index.php?page=' . $page);
     } else {
-        $_SESSION['delete'] = "<div class='error'>Failed to delete " . $title . ".</div>";
+        $_SESSION['delete'] = "<div class='alert alert-error'>Gagal menghapus!. " . $title . ".</div>";
         header('location:' . SITEURL . 'teacher/index.php?page=' . $page);
     }
 } elseif (isset($_POST['delete_subject'])) {
@@ -25,10 +25,10 @@ if (isset($_POST['delete_question'])) {
     $query = $obj->delete_data($tbl_name, $where);
     $res = $obj->execute_query($conn, $query);
     if ($res == true) {
-        $_SESSION['delete'] = "<div class='success'>" . $title . " successfully deleted.</div>";
+        $_SESSION['delete'] = "<div class='alert alert-success'>" . $title . " Berhasil menghapus!.</div>";
         header('location:' . SITEURL . 'teacher/index.php?page=' . $page);
     } else {
-        $_SESSION['delete'] = "<div class='error'>Failed to delete " . $title . ".</div>";
+        $_SESSION['delete'] = "<div class='alert alert-error'>Gagal menghapus" . $title . ".</div>";
         header('location:' . SITEURL . 'teacher/index.php?page=' . $page);
     }
 } elseif (isset($_POST['delete_student'])) {
@@ -40,10 +40,10 @@ if (isset($_POST['delete_question'])) {
     $query = $obj->delete_data($tbl_name, $where);
     $res = $obj->execute_query($conn, $query);
     if ($res == true) {
-        $_SESSION['delete'] = "<div class='success'>" . $title . " successfully deleted.</div>";
+        $_SESSION['delete'] = "<div class='alert alert-success'>" . $title . " Berhasil menghapus!.</div>";
         header('location:' . SITEURL . 'teacher/index.php?page=' . $page);
     } else {
-        $_SESSION['delete'] = "<div class='error'>Failed to delete " . $title . ".</div>";
+        $_SESSION['delete'] = "<div class='alert alert-error'>Gagal menghapus! " . $title . ".</div>";
         header('location:' . SITEURL . 'teacher/index.php?page=' . $page);
     }
 }
